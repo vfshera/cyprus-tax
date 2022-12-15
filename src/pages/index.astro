@@ -1,188 +1,210 @@
 ---
+import Legal from "@components/Legal.astro";
 import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="site-container">
-    <section class="pt-[130px] pb-10 px-4">
-      <!-- TEXT -->
-      <div class="text-[#4a4a4a] text-sm leading-[22px]">
-        <p class="">
-          Cyprus has joined the European Union in 2004 and the Eurozone on 1st
-          January 2008. When compared with similar international business
-          centers, Cyprus has to offer the following advantages and
-          opportunities:
-        </p>
+  <main class="">
+    <div class="site-container">
+      <section class="pt-[130px] pb-24 px-4">
+        <!-- TEXT -->
+        <div class="text-[#4a4a4a] text-sm leading-[22px]">
+          <p class="">
+            Cyprus has joined the European Union in 2004 and the Eurozone on 1st
+            January 2008. When compared with similar international business
+            centers, Cyprus has to offer the following advantages and
+            opportunities:
+          </p>
 
-        <!-- lists -->
+          <!-- lists -->
 
-        <div class="flex justify-between py-6 gap-4 mb-4">
-          <ul class="w-1/2 pl-10">
-            <li class="list-disc">
-              Cyprus is one of the most attractive investment destinations. High
-              profile companies and high net worth individuals have presence in
-              Cyprus.
-            </li>
-            <li class="list-disc">
-              Excellent geographical position, well developed infrastructure and
-              one of the countries with the lowest crime rates (0.9218 per 100
-              persons) within the European Union.
-            </li>
-          </ul>
-          <ul class="w-1/2 pl-10">
-            <li class="list-disc">
-              Friendly, highly qualified, experienced and commercially oriented
-              workforce.
-            </li>
-            <li class="list-disc">
-              Excellent international educational system and internationally
-              recognized academic institutions.
-            </li>
-            <li class="list-disc">
-              Overall, safe and welcoming environment with excellent quality of
-              life.
-            </li>
-          </ul>
+          <div class="flex justify-between py-6 gap-4 mb-4">
+            <ul class="w-1/2 pl-10">
+              <li class="list-disc">
+                Cyprus is one of the most attractive investment destinations.
+                High profile companies and high net worth individuals have
+                presence in Cyprus.
+              </li>
+              <li class="list-disc">
+                Excellent geographical position, well developed infrastructure
+                and one of the countries with the lowest crime rates (0.9218 per
+                100 persons) within the European Union.
+              </li>
+            </ul>
+            <ul class="w-1/2 pl-10">
+              <li class="list-disc">
+                Friendly, highly qualified, experienced and commercially
+                oriented workforce.
+              </li>
+              <li class="list-disc">
+                Excellent international educational system and internationally
+                recognized academic institutions.
+              </li>
+              <li class="list-disc">
+                Overall, safe and welcoming environment with excellent quality
+                of life.
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <!-- Corporate Tax -->
-      <div class="text-[#4a4a4a]">
-        <h3 class="text-2xl mb-3 font-bold">Corporate Tax: 12.5%</h3>
-        <p class="text-sm leading-[22px] mb-6">
-          Personal Income Tax:<br />
-          €0 – €19,500 0%<br />
-          €19,501 – €28,000 20%<br />
-          €28,001 – €36,300 25%<br />
-          €36.301 – €60,000 30%<br />
-          €60,001 and over 35%
-        </p>
-        <p class="text-sm leading-[22px]">
-          Value Added Tax: 19%<br />
-          Capital Gain Tax: 20%
-        </p>
-      </div>
-
-      <!-- General Health System -->
-      <div class="text-[#4a4a4a] mt-12">
-        <h3 class="text-2xl mb-3 font-bold">
-          General Health System (GHS) Contributions:
-        </h3>
-        <p class="text-sm leading-[22px] mb-6">
-          Contributions relating to the implementation of the General Health
-          System (GHS) started from 1 March 2019, and will increase from 1 March
-          2020 as per the table below:
-        </p>
-
-        <!-- table -->
-
-        <div class="table">
-          <table class="table-auto">
-            <thead>
-              <tr>
-                <th align="left"
-                  ><strong class="text-[#ac0060]">Ref</strong>
-                </th>
-                <th align="left"
-                  ><strong class="text-[#ac0060]">Category</strong>
-                </th>
-                <th align="left"
-                  ><strong class="text-[#ac0060]">Applied On</strong>
-                </th>
-                <th align="left"
-                  ><strong class="text-[#ac0060]">Phase A</strong>
-                </th>
-                <th align="left"
-                  ><strong class="text-[#ac0060]">Phase B</strong>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- date row -->
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                  <p class="text-[#ac0060] pr-2"><strong>01/03/2019</strong></p>
-                </td>
-                <td>
-                  <p class="text-[#ac0060] pr-2"><strong>01/03/2020</strong></p>
-                </td>
-              </tr>
-
-              <!-- row 1 -->
-              <tr>
-                <td><p class="pr-2"><strong>(i)</strong></p></td>
-                <td><p class="pr-2">Employees</p></td>
-                <td><p class="pr-2">Own emoluments</p></td>
-                <td><p class="pr-2">1,70%</p></td>
-                <td><p class="pr-2">2,65%</p></td>
-              </tr>
-              <!-- row 2 -->
-              <tr>
-                <td><p class="pr-2"><strong>(ii)</strong></p></td>
-                <td><p class="pr-2">Employers</p></td>
-                <td><p class="pr-2">Employees’ emoluments</p></td>
-                <td><p class="pr-2">1,85%</p></td>
-                <td><p class="pr-2">2,90%</p></td>
-              </tr>
-
-              <!-- row 3 -->
-              <tr>
-                <td><p class="pr-2"><strong>(iii)</strong></p></td>
-                <td><p class="pr-2">Self-employed</p></td>
-                <td><p class="pr-2">Own income</p></td>
-                <td><p class="pr-2">2,55%</p></td>
-                <td><p class="pr-2">4,00%</p></td>
-              </tr>
-
-              <!-- row 4 -->
-              <tr>
-                <td><p class="pr-2"><strong>(iv)</strong></p></td>
-                <td><p class="pr-2">Pensioners</p></td>
-                <td><p class="pr-2">Pension</p></td>
-                <td><p class="pr-2">1,70%</p></td>
-                <td><p class="pr-2">2,65%</p></td>
-              </tr>
-
-              <!-- row 5 -->
-
-              <tr>
-                <td><p class="pr-2"><strong>(v)</strong></p></td>
-                <td><p class="pr-2">Persons holding office</p></td>
-                <td><p class="pr-2">Officers’ Remuneration</p></td>
-                <td><p class="pr-2">1,70%</p></td>
-                <td><p class="pr-2">2,65%</p></td>
-              </tr>
-
-              <!-- row 6 -->
-              <tr>
-                <td><p class="pr-2"><strong>(vi)</strong></p></td>
-                <td
-                  ><p class="pr-2">
-                    Persons earning rental, interest,<br />
-                    dividend and other income
-                  </p>
-                </td>
-                <td>
-                  <p class="pr-2">
-                    Rental, Interest, Dividend<br />
-                    Income etc
-                  </p>
-                </td>
-                <td><p class="pr-2">1,70%</p></td>
-                <td><p class="pr-2">2,65%</p></td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- Corporate Tax -->
+        <div class="text-[#4a4a4a]">
+          <h3 class="text-2xl mb-3 font-bold">Corporate Tax: 12.5%</h3>
+          <p class="text-sm leading-[22px] mb-6">
+            Personal Income Tax:<br />
+            €0 – €19,500 0%<br />
+            €19,501 – €28,000 20%<br />
+            €28,001 – €36,300 25%<br />
+            €36.301 – €60,000 30%<br />
+            €60,001 and over 35%
+          </p>
+          <p class="text-sm leading-[22px]">
+            Value Added Tax: 19%<br />
+            Capital Gain Tax: 20%
+          </p>
         </div>
-      </div>
-    </section>
+
+        <!-- General Health System -->
+        <div class="text-[#4a4a4a] mt-12">
+          <h3 class="text-2xl mb-3 font-bold">
+            General Health System (GHS) Contributions:
+          </h3>
+          <p class="text-sm leading-[22px] mb-6">
+            Contributions relating to the implementation of the General Health
+            System (GHS) started from 1 March 2019, and will increase from 1
+            March 2020 as per the table below:
+          </p>
+
+          <!-- table -->
+
+          <div class="mt-16">
+            <table class="table-auto text-sm leading-[22px]">
+              <thead>
+                <tr>
+                  <th align="left"
+                    ><strong class="text-[#ac0060]">Ref</strong>
+                  </th>
+                  <th align="left"
+                    ><strong class="text-[#ac0060]">Category</strong>
+                  </th>
+                  <th align="left"
+                    ><strong class="text-[#ac0060]">Applied On</strong>
+                  </th>
+                  <th align="left"
+                    ><strong class="text-[#ac0060]">Phase A</strong>
+                  </th>
+                  <th align="left"
+                    ><strong class="text-[#ac0060]">Phase B</strong>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- date row -->
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <p class="text-[#ac0060] pr-2 py-2">
+                      <strong>01/03/2019</strong>
+                    </p>
+                  </td>
+                  <td>
+                    <p class="text-[#ac0060] pr-2 py-2">
+                      <strong>01/03/2020</strong>
+                    </p>
+                  </td>
+                </tr>
+
+                <!-- empty row for spacing -->
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <p class="pr-2 py-2"></p>
+                  </td>
+                  <td>
+                    <p class="pr-2 py-2"></p>
+                  </td>
+                </tr>
+
+                <!-- row 1 -->
+                <tr class="border-t border-gray-300">
+                  <td><p class="pr-2 py-2"><strong>(i)</strong></p></td>
+                  <td><p class="pr-2 py-2">Employees</p></td>
+                  <td><p class="pr-2 py-2">Own emoluments</p></td>
+                  <td><p class="pr-2 py-2">1,70%</p></td>
+                  <td><p class="pr-2 py-2">2,65%</p></td>
+                </tr>
+                <!-- row 2 -->
+                <tr class="border-t border-gray-300">
+                  <td><p class="pr-2 py-2"><strong>(ii)</strong></p></td>
+                  <td><p class="pr-2 py-2">Employers</p></td>
+                  <td><p class="pr-2 py-2">Employees’ emoluments</p></td>
+                  <td><p class="pr-2 py-2">1,85%</p></td>
+                  <td><p class="pr-2 py-2">2,90%</p></td>
+                </tr>
+
+                <!-- row 3 -->
+                <tr class="border-t border-gray-300">
+                  <td><p class="pr-2 py-2"><strong>(iii)</strong></p></td>
+                  <td><p class="pr-2 py-2">Self-employed</p></td>
+                  <td><p class="pr-2 py-2">Own income</p></td>
+                  <td><p class="pr-2 py-2">2,55%</p></td>
+                  <td><p class="pr-2 py-2">4,00%</p></td>
+                </tr>
+
+                <!-- row 4 -->
+                <tr class="border-t border-gray-300">
+                  <td><p class="pr-2 py-2"><strong>(iv)</strong></p></td>
+                  <td><p class="pr-2 py-2">Pensioners</p></td>
+                  <td><p class="pr-2 py-2">Pension</p></td>
+                  <td><p class="pr-2 py-2">1,70%</p></td>
+                  <td><p class="pr-2 py-2">2,65%</p></td>
+                </tr>
+
+                <!-- row 5 -->
+
+                <tr class="border-t border-gray-300">
+                  <td><p class="pr-2 py-2"><strong>(v)</strong></p></td>
+                  <td><p class="pr-2 py-2">Persons holding office</p></td>
+                  <td><p class="pr-2 py-2">Officers’ Remuneration</p></td>
+                  <td><p class="pr-2 py-2">1,70%</p></td>
+                  <td><p class="pr-2 py-2">2,65%</p></td>
+                </tr>
+
+                <!-- row 6 -->
+                <tr class="border-t border-gray-300">
+                  <td><p class="pr-2 py-2"><strong>(vi)</strong></p></td>
+                  <td
+                    ><p class="pr-2 py-2">
+                      Persons earning rental, interest,<br />
+                      dividend and other income
+                    </p>
+                  </td>
+                  <td>
+                    <p class="pr-2 py-2">
+                      Rental, Interest, Dividend<br />
+                      Income etc
+                    </p>
+                  </td>
+                  <td><p class="pr-2 py-2">1,70%</p></td>
+                  <td><p class="pr-2 py-2">2,65%</p></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <Legal />
   </main>
 </Layout>
 
-<style>
+<style is:global>
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
   body {

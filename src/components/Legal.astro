@@ -1,0 +1,100 @@
+---
+import LegalAccordion from "./LegalAccordion.astro";
+---
+
+<div class="bg-[#282828] w-full">
+  <div class="site-container">
+    <section class="px-4 py-[130px] text-white">
+      <h2 class="text-[40px] leading-[46px] font-bold">
+        Legal entities in Cyprus
+      </h2>
+
+      <div class="mt-9 flex flex-col gap-4">
+        <LegalAccordion title="Cyprus Holding Company Tax Regimes">
+          Apart from the ideal geographical position and established trade
+          routes throughout the island, Cyprus also has to offer one of the most
+          beneficial and versatile <a
+            href="https://www.finexpertiza.cy/holding-companies/"
+            >holding company</a
+          > tax regimes in the world. The favorable withholding tax provisions of
+          the <a
+            href="https://www.finexpertiza.cy/double-taxation-avoidance-agreements/"
+            >Double Tax Treaties (DTT)</a
+          > network and the EU Parent-Subsidiary Directive, among other directives,
+          have been designed and implemented to ensure successful business growth.
+          Various global companies have chosen Cyprus for the maximization and optimum
+          use of capital and financial resources.
+        </LegalAccordion>
+        <LegalAccordion title="Income from Dividends is Tax-Free">
+          <div class="flex flex-col gap-6">
+            <p>
+              In most cases, income from dividends is exempt from tax. This
+              makes Cyprus holding companies a very attractive proposition for
+              international groups or individuals investing abroad, aiming at
+              dividend income streams. This is also very favorable as a
+              repatriation vehicle where the investor’s jurisdiction does not
+              have a favorable treaty with the country in which they wish to
+              invest. Because capital gains on investments are not taxable,
+              Cyprus is the perfect location for holding companies with
+              subsidiaries that have potential for high capital appreciation
+              that may be spun off or sold in the future.
+            </p>
+            <p>
+              The only exceptions that are eligible for Special Contribution for
+              Defense Tax to be applied on dividends received from non-Cypriot
+              companies at the rate of 17% will be in the following cases:
+            </p>
+            <ul class="pl-16">
+              <li class="list-disc">
+                The income of the subsidiary is subject to an effective tax
+                burden of 5% or lower; and
+              </li>
+              <li class="list-disc">
+                The subsidiary engages, directly or indirectly, more than 50% in
+                activities leading to investment income (e.g. holding of bank
+                deposits to earn interest).
+              </li>
+            </ul>
+          </div>
+        </LegalAccordion>
+        <LegalAccordion title="Tax-Free Profits from the Sales of Shares">
+          <div class="flex flex-col gap-6">
+            <p>
+              In Cyprus, profits from the sales of securities (defined as
+              “shares, bonds, debentures, founders’ shares and other securities
+              of companies or other legal person, incorporated under a law In
+              Cyprus or abroad, including options thereon”) are generally exempt
+              from tax, even if this is the only trading activity of the
+              company.
+            </p>
+            <p>
+              There is one exception of 20% capital gain tax, for the profit
+              earned from the sales of shares in certain non-listed companies,
+              owning real estate in Cyprus.
+            </p>
+          </div>
+        </LegalAccordion>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+  const entities = [...document.querySelectorAll(".legal-entity")];
+  const COLLAPSED_ATTRIBUTE = "data-collapsed";
+  entities.forEach((entity, index) => {
+    entity.children[0].addEventListener("click", () => {
+      // save attribute to IS_COLLAPSED first before collapsing all
+      const IS_COLLAPSED = entity.getAttribute(COLLAPSED_ATTRIBUTE) === "true";
+      // collapsing all
+      entities.forEach((entity) =>
+        entity.setAttribute(COLLAPSED_ATTRIBUTE, "true")
+      );
+      if (IS_COLLAPSED) {
+        entity.setAttribute(COLLAPSED_ATTRIBUTE, "false");
+      } else {
+        entity.setAttribute(COLLAPSED_ATTRIBUTE, "true");
+      }
+    });
+  });
+</script>

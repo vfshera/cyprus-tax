@@ -1,0 +1,84 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div
+  data-collapsed="true"
+  class="legal-entity transition-shadow duration-200 border-b border-gray-200"
+>
+  <button class="flex items-center justify-between w-full">
+    <h4 class="text-2xl leading-10 font-bold">
+      {title}
+    </h4>
+
+    <!-- icon -->
+    <div class="icons">
+      <svg
+        id="MinusIcon"
+        class="w-6 aspect-square"
+        viewBox="0 0 32 32"
+        fill="white"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z"
+          stroke="#ffffff"
+          stroke-width="2"
+          stroke-miterlimit="10"></path>
+        <path
+          d="M11 16H21"
+          stroke="#282828"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+
+      <svg
+        id="PlusIcon"
+        class="w-6 aspect-square"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z"
+          fill="#ffffff"
+          stroke="#ffffff"
+          stroke-width="2"
+          stroke-miterlimit="10"></path>
+        <path
+          d="M11 16H21"
+          stroke="#282828"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+        <path
+          d="M16 11V21"
+          stroke="#282828"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </div>
+  </button>
+
+  <div class="content text-sm leading-[22px]">
+    <slot />
+  </div>
+</div>
+<style>
+  [data-collapsed="true"] .content {
+    @apply max-h-0 overflow-x-hidden my-3 overflow-y-auto transition-[max-height] duration-700 ease-in-out;
+  }
+  [data-collapsed="true"] button .icons #MinusIcon,
+  [data-collapsed="false"] button .icons #PlusIcon {
+    @apply hidden;
+  }
+  [data-collapsed="false"] .content {
+    @apply max-h-[600px] transition-[max-height] my-5 duration-700 ease-in-out;
+  }
+</style>
