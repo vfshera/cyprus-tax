@@ -1,0 +1,62 @@
+---
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <section class="site-container pt-[130px] pb-10">
+      <div class="text-[#4a4a4a] px-4">
+        <p class="text-sm leading-[22px]">
+          Cyprus has joined the European Union in 2004 and the Eurozone on 1st
+          January 2008. When compared with similar international business
+          centers, Cyprus has to offer the following advantages and
+          opportunities:
+        </p>
+
+        <!-- lists -->
+
+        <div
+          class="flex justify-between py-6 text-sm leading-[22px] gap-4 mb-4"
+        >
+          <ul class="w-1/2 pl-10">
+            <li class="list-disc">
+              Cyprus is one of the most attractive investment destinations. High
+              profile companies and high net worth individuals have presence in
+              Cyprus.
+            </li>
+            <li class="list-disc">
+              Excellent geographical position, well developed infrastructure and
+              one of the countries with the lowest crime rates (0.9218 per 100
+              persons) within the European Union.
+            </li>
+          </ul>
+          <ul class="w-1/2 pl-10">
+            <li class="list-disc">
+              Friendly, highly qualified, experienced and commercially oriented
+              workforce.
+            </li>
+            <li class="list-disc">
+              Excellent international educational system and internationally
+              recognized academic institutions.
+            </li>
+            <li class="list-disc">
+              Overall, safe and welcoming environment with excellent quality of
+              life.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+  .site-container {
+    @apply w-full px-4 mx-auto sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px];
+  }
+</style>
