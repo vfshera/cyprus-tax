@@ -3,10 +3,11 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>
-    <section class="site-container pt-[130px] pb-10">
-      <div class="text-[#4a4a4a] px-4">
-        <p class="text-sm leading-[22px]">
+  <main class="site-container">
+    <section class="pt-[130px] pb-10 px-4">
+      <!-- TEXT -->
+      <div class="text-[#4a4a4a] text-sm leading-[22px]">
+        <p class="">
           Cyprus has joined the European Union in 2004 and the Eurozone on 1st
           January 2008. When compared with similar international business
           centers, Cyprus has to offer the following advantages and
@@ -15,9 +16,7 @@ import Layout from "@layouts/Layout.astro";
 
         <!-- lists -->
 
-        <div
-          class="flex justify-between py-6 text-sm leading-[22px] gap-4 mb-4"
-        >
+        <div class="flex justify-between py-6 gap-4 mb-4">
           <ul class="w-1/2 pl-10">
             <li class="list-disc">
               Cyprus is one of the most attractive investment destinations. High
@@ -45,6 +44,23 @@ import Layout from "@layouts/Layout.astro";
             </li>
           </ul>
         </div>
+      </div>
+
+      <!-- Corporate Tax -->
+      <div class="text-[#4a4a4a]">
+        <h3 class="text-2xl mb-3 font-bold">Corporate Tax: 12.5%</h3>
+        <p class="text-sm leading-[22px] mb-6">
+          Personal Income Tax:<br />
+          €0 – €19,500 0%<br />
+          €19,501 – €28,000 20%<br />
+          €28,001 – €36,300 25%<br />
+          €36.301 – €60,000 30%<br />
+          €60,001 and over 35%
+        </p>
+        <p class="text-sm leading-[22px]">
+          Value Added Tax: 19%<br />
+          Capital Gain Tax: 20%
+        </p>
       </div>
     </section>
   </main>
