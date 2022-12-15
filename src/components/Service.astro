@@ -1,0 +1,44 @@
+---
+interface Props extends IService {}
+
+const { title, img, link, description } = Astro.props;
+---
+
+<div class="service text-white" data-img-src={img} data-active="false">
+  <a href={`https://www.finexpertiza.cy/${link}`} class="flex flex-col group">
+    <span class="uppercase text-xl font-bold">{title}</span>
+    <span
+      class="description text-sm leading-[22px] h-0 opacity-0 group-hover:opacity-100 group-hover:h-[75px] transition-all duration-300 ease-in-out"
+      >{description}</span
+    >
+    <div
+      class="discover flex items-center w-max group-hover:[&>span]:opacity-100 group-hover:[&>span]:w-auto relative group-hover:[&>svg]:left-auto group-hover:[&>svg]:-right-6"
+    >
+      <span
+        class="text-sm leading-[22px] uppercase transition-all duration-400 [transition-timing-function:cubic-bezier(.25,.46,.45,.94)] w-0 opacity-0"
+        >DISCOVER</span
+      >
+      <svg
+        class="h-5 aspect-auto absolute top-1/2 left-0 -translate-y-1/2 transition-transform duration-[7s] [transition-timing-function:cubic-bezier(.25,.46,.45,.94)]"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 24 24"
+        fill="#FFFFFF"
+      >
+        <path
+          d="M14 5.3417969C13.744125 5.3417969 13.487969 5.4412187 13.292969 5.6367188L13.207031 5.7226562C12.816031 6.1136563 12.816031 6.7467188 13.207031 7.1367188L17.070312 11L4 11C3.448 11 3 11.448 3 12C3 12.552 3.448 13 4 13L17.070312 13L13.207031 16.863281C12.816031 17.254281 12.816031 17.887344 13.207031 18.277344L13.292969 18.363281C13.683969 18.754281 14.317031 18.754281 14.707031 18.363281L20.363281 12.707031C20.754281 12.316031 20.754281 11.682969 20.363281 11.292969L14.707031 5.6367188C14.511531 5.4412187 14.255875 5.3417969 14 5.3417969 z"
+          fill="#FFFFFF"></path>
+      </svg>
+    </div>
+  </a>
+</div>
+
+<style>
+  [data-active="true"] .description {
+    @apply opacity-100  h-[75px];
+  }
+
+  [data-active="true"] .discover svg {
+    @apply left-auto  -right-6;
+  }
+</style>

@@ -1,0 +1,100 @@
+---
+import Service from "@components/Service.astro";
+import Layout from "@layouts/Layout.astro";
+
+const services: IService[] = [
+  {
+    title: "accounting",
+    img: "/images/Accounting.webp",
+    description: "bookkeeping, financial statements, payroll…",
+    link: "accounting",
+  },
+  {
+    title: "advisory",
+    img: "/images/Advisory.webp",
+    description: "strategic planning, financial & risk advisory…",
+    link: "advisory",
+  },
+  {
+    title: "audit",
+    img: "/images/Audit.webp",
+    description: "statutory & financial information audit and review…",
+    link: "audit",
+  },
+  {
+    title: "valuation",
+    img: "/images/BusinessValuation.webp",
+    description: "in-depth business valuation, assessment & management…",
+    link: "business-valuation",
+  },
+  {
+    title: "ifrs",
+    img: "/images/IFRS-2.webp",
+    description: "planning, implementation, training, auditing of FS…",
+    link: "ifrs",
+  },
+  {
+    title: "tax",
+    img: "/images/Tax.webp",
+    description: "planning, international structuring, M&As, buyouts…",
+    link: "tax",
+  },
+];
+---
+
+<Layout title="Services">
+  <main>
+    <section
+      id="Services"
+      class="h-[600px]"
+      style={`background-image: url('/images/IFRS-2.webp');`}
+    >
+      <div
+        class="flex flex-col justify-between px-4 bg-white lg:bg-transparent h-full w-full"
+      >
+        <h3 class="pt-6 pl-5 font-bold text-2xl text-white">Our Services</h3>
+
+        <div class="service-wrapper p-5 pb-6 flex justify-between items-end">
+          {services.map((service) => <Service {...service} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<script>
+  const ACTIVE = "data-active";
+  const IMG_SRC = "data-img-src";
+  const servicesWrapper = document.querySelector("#Services");
+
+  function getActive() {
+    return document.querySelector(`[${ACTIVE}="true"]`);
+  }
+
+  function resetActive() {
+    const active = getActive();
+
+    if (!active) return;
+    active.setAttribute(ACTIVE, "false");
+  }
+
+  [...document.querySelectorAll(".service")].forEach((service) => {
+    service.addEventListener("mouseover", () => {
+      const active = getActive();
+
+      //if is current just return;
+      if (
+        active &&
+        active.getAttribute(IMG_SRC) === service.getAttribute(IMG_SRC)
+      ) {
+        return;
+      }
+      resetActive();
+      service.setAttribute(ACTIVE, "true");
+
+      servicesWrapper.style.backgroundImage = `url('${service.getAttribute(
+        IMG_SRC
+      )}')`;
+    });
+  });
+</script>
