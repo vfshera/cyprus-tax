@@ -6,36 +6,42 @@ const services: IService[] = [
   {
     title: "accounting",
     img: "/images/Accounting.webp",
+    imgMobile: "/images/Mobile_Accounting.webp",
     description: "bookkeeping, financial statements, payroll…",
     link: "accounting",
   },
   {
     title: "advisory",
     img: "/images/Advisory.webp",
+    imgMobile: "/images/Mobile_Advisory.webp",
     description: "strategic planning, financial & risk advisory…",
     link: "advisory",
   },
   {
     title: "audit",
     img: "/images/Audit.webp",
+    imgMobile: "/images/Mobile_Audit.webp",
     description: "statutory & financial information audit and review…",
     link: "audit",
   },
   {
     title: "valuation",
     img: "/images/BusinessValuation.webp",
+    imgMobile: "/images/Mobile_BusinessValuation.webp",
     description: "in-depth business valuation, assessment & management…",
     link: "business-valuation",
   },
   {
     title: "ifrs",
-    img: "/images/IFRS-2.webp",
+    img: "/images/IFRS.webp",
+    imgMobile: "/images/Mobile_IFRS.webp",
     description: "planning, implementation, training, auditing of FS…",
     link: "ifrs",
   },
   {
     title: "tax",
     img: "/images/Tax.webp",
+    imgMobile: "/images/Mobile_Tax.webp",
     description: "planning, international structuring, M&As, buyouts…",
     link: "tax",
   },
@@ -46,15 +52,21 @@ const services: IService[] = [
   <main>
     <section
       id="Services"
-      class="h-[600px]"
-      style={`background-image: url('/images/IFRS-2.webp');`}
+      class="min-h-[600px] lg:h-[600px]"
+      style={`background-image: url('/images/Accounting.webp');`}
     >
       <div
-        class="flex flex-col justify-between px-4 bg-white lg:bg-transparent h-full w-full"
+        class="overlay flex flex-col justify-between px-4 bg-white lg:bg-transparent min-h-full w-full"
       >
-        <h3 class="pt-6 pl-5 font-bold text-2xl text-white">Our Services</h3>
+        <h3 class="pt-6 pl-5 font-bold text-2xl text-[#4a4a4a] lg:text-white">
+          Our Services
+        </h3>
 
-        <div class="service-wrapper p-5 pb-6 flex justify-between items-end">
+        <p class="text-[#4a4a4a] lg:hidden mt-3 pl-5">Swipe to discover</p>
+
+        <div
+          class="service-wrapper relative h-[500px] lg:h-auto mb-16 mt-10 lg:my-0 lg:p-5 lg:pb-6 flex justify-between items-end"
+        >
           {services.map((service) => <Service {...service} />)}
         </div>
       </div>
@@ -65,7 +77,41 @@ const services: IService[] = [
 <script>
   const ACTIVE = "data-active";
   const IMG_SRC = "data-img-src";
-  const servicesWrapper = document.querySelector("#Services");
+  const services = document.querySelector("#Services");
+  const serviceWrapper = document.querySelector(".service-wrapper");
+
+  //CREATE LAST STACK DIVS
+  const SHADOW_CLASSES = [
+    "w-[300px]",
+    "md:w-[316px]",
+    "h-[500px]",
+    "absolute",
+    "-translate-x-1/2",
+    "lg:hidden",
+  ];
+  const shadowService = document.createElement("div");
+  const shadowService2 = document.createElement("div");
+
+  shadowService.classList.add(
+    "shadow-service-1",
+    "left-[calc(50%+10px)]",
+    "top-2",
+    "bg-[#9f9fa7]",
+    ...SHADOW_CLASSES,
+    "z-[4]"
+  );
+
+  shadowService2.classList.add(
+    "shadow-service-2",
+    "left-[calc(50%+20px)]",
+    "top-4",
+    "bg-[#6e6e7a]",
+    ...SHADOW_CLASSES,
+    "z-[2]"
+  );
+
+  serviceWrapper.appendChild(shadowService);
+  serviceWrapper.appendChild(shadowService2);
 
   function getActive() {
     return document.querySelector(`[${ACTIVE}="true"]`);
@@ -92,9 +138,25 @@ const services: IService[] = [
       resetActive();
       service.setAttribute(ACTIVE, "true");
 
-      servicesWrapper.style.backgroundImage = `url('${service.getAttribute(
+      services.style.backgroundImage = `url('${service.getAttribute(
         IMG_SRC
       )}')`;
     });
   });
+</script>
+
+<script>
+  const resizeObserver = new ResizeObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.contentRect.width < 1024) {
+        console.log("Less Than Desktop");
+      } else {
+        console.log("Desktop");
+      }
+    }
+
+    console.log("Size changed");
+  });
+
+  resizeObserver.observe(document.body);
 </script>

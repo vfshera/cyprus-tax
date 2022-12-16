@@ -3,6 +3,7 @@
 interface IService {
   title: string;
   img: string;
+  imgMobile: string;
   description: string;
   link: string;
 }
