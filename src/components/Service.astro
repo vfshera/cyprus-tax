@@ -1,25 +1,32 @@
 ---
 interface Props extends IService {}
 
-const { title, img, link, description } = Astro.props;
+const { title, img, link, description, imgMobile } = Astro.props;
 ---
 
-<div class="service text-white" data-img-src={img} data-active="false">
-  <a href={`https://www.finexpertiza.cy/${link}`} class="flex flex-col group">
+<div
+  class="service w-[300px] md:w-[316px] lg:w-auto text-white"
+  data-img-src={img}
+  data-active="false"
+>
+  <a
+    href={`https://www.finexpertiza.cy/${link}`}
+    class="flex flex-col px-9 pb-9 group relative z-10"
+  >
     <span class="uppercase text-xl font-bold">{title}</span>
     <span
-      class="description text-sm leading-[22px] h-0 opacity-0 group-hover:opacity-100 group-hover:h-[75px] transition-all duration-300 ease-in-out"
+      class="description text-sm leading-[22px] h-[75px] lg:h-0 lg:opacity-0 group-hover:opacity-100 group-hover:h-[75px] transition-all duration-300 ease-in-out"
       >{description}</span
     >
     <div
       class="discover flex items-center w-max group-hover:[&>span]:opacity-100 group-hover:[&>span]:w-auto relative group-hover:[&>svg]:left-auto group-hover:[&>svg]:-right-6"
     >
       <span
-        class="text-sm leading-[22px] uppercase transition-all duration-400 [transition-timing-function:cubic-bezier(.25,.46,.45,.94)] w-0 opacity-0"
+        class="text-sm leading-[22px] uppercase transition-all duration-400 [transition-timing-function:cubic-bezier(.25,.46,.45,.94)] lg:w-0 lg:opacity-0"
         >DISCOVER</span
       >
       <svg
-        class="h-5 aspect-auto absolute top-1/2 left-0 -translate-y-1/2 transition-transform duration-[7s] [transition-timing-function:cubic-bezier(.25,.46,.45,.94)]"
+        class="h-5 aspect-auto absolute top-1/2 -right-6 lg:right-auto lg:left-0 -translate-y-1/2 transition-transform duration-[7s] [transition-timing-function:cubic-bezier(.25,.46,.45,.94)]"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 24 24"
@@ -31,6 +38,12 @@ const { title, img, link, description } = Astro.props;
       </svg>
     </div>
   </a>
+
+  <div
+    style={`background-image: url('${imgMobile}')`}
+    class="mobile-image absolute top-0 left-1/2 -translate-x-1/2 h-full w-[300px] md:w-[316px] z-0 lg:hidden"
+  >
+  </div>
 </div>
 
 <style>
@@ -40,5 +53,28 @@ const { title, img, link, description } = Astro.props;
 
   [data-active="true"] .discover svg {
     @apply left-auto  -right-6;
+  }
+
+  .service {
+    @apply h-[500px] lg:h-max flex flex-col justify-end absolute top-0 left-1/2  lg:static -translate-x-1/2 lg:translate-x-0 lg:block;
+  }
+
+  .service:nth-child(1) {
+    @apply z-10;
+  }
+  .service:nth-child(2) {
+    @apply z-[9];
+  }
+  .service:nth-child(3) {
+    @apply z-[8];
+  }
+  .service:nth-child(4) {
+    @apply z-[7];
+  }
+  .service:nth-child(5) {
+    @apply z-[6];
+  }
+  .service:nth-child(6) {
+    @apply z-[5];
   }
 </style>
